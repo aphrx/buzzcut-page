@@ -34,7 +34,7 @@ export default function Landing(props) {
       <Header />
       <Hero
         title="Bring Your Buzzer Into The 21st Century"
-        subtitle="Automate Your Buzzer with Buzzcut"
+        subtitle="Modernize Your Buzzer"
         image="https://i.imgur.com/WwU5FPX.png"
         ctaText="Create your account now"
         ctaLink="/signup"

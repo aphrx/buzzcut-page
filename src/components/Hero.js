@@ -16,10 +16,10 @@ export default function Hero({
     <Flex
       align="center"
       justify={{ base: 'center', md: 'flex-start', xl: 'space-between' }}
-      direction={{ base: 'column-reverse', md: 'row' }}
+      direction={{ base: 'column', md: 'row' }} // Change direction for mobile view
       wrap="no-wrap"
       minH="70vh"
-      px={8}
+      px={{ base: 1, md: 8 }}
       mb={16}
       {...rest}
     >
@@ -27,6 +27,7 @@ export default function Hero({
         spacing={4}
         w={{ base: '80%', md: '50%' }}
         align={['center', 'center', 'flex-start', 'flex-start']}
+        order={{ base: 1, md: 1 }} // Make text appear first on larger screens and second on mobile
       >
         <Heading
           as="h1"
@@ -54,8 +55,9 @@ export default function Hero({
           align="center"
           spacing={4} // Add spacing between badges
         >
-          <Box minHeight="50px" minWidth="150px"> {/* Minimum height and width for consistent size */}
+          <Box minHeight="50px" minWidth="150px" > {/* Minimum height and width for consistent size */}
             <a
+              
               href="https://apps.apple.com/us/app/buzzcut-automated-buzzer/id6499471607"
               target="_blank"
               rel="noopener noreferrer"
@@ -87,8 +89,10 @@ export default function Hero({
       <Box
         w={{ base: '80%', sm: '60%', md: '25%' }}
         mb={{ base: 12, md: 0 }}
+        mt={{ base: 12, md: 0 }}
         ml={{ sm: 12 }}
         mr={{ sm: 12 }}
+        order={{ base: 1, md: 2 }} // Make image appear below the text on mobile
       >
         <Image src={image} size="100%" rounded="1rem" shadow="2xl" />
       </Box>
