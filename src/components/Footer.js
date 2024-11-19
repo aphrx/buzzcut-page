@@ -14,7 +14,8 @@ export default function Footer() {
       // justify="space-between"
       // wrap="wrap"
       // w="100%"
-      mb={{ base: 4, md: 0 }}
+      // mt={{ base: 4, md: 10 }}
+      m={{ base: 5 }}
       p={0}
       // bg={["primary.500", "primary.500", "transparent", "transparent"]}
     >

@@ -34,7 +34,7 @@ const Header = (props) => {
         {/* Link the logo to the homepage */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <Image 
-            src="https://play-lh.googleusercontent.com/kFywh_j9lSOyUD1iuO5zK-q6R_eRFARBRW0yVcyFLPrrNDH28FPKksF-clN0vXfysy8n" 
+            src="logo.png" 
             height={10} 
             alt="Buzzcut Logo" 
             mr={2} // Add some space between logo and text
