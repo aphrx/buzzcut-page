@@ -1,8 +1,8 @@
 {
-  "name": "chakra-landing-page",
+  "name": "Buzzcut Landing Page",
   "version": "0.1.0",
   "private": false,
-  "homepage": "buzzcut.io",
+  "homepage": "https://buzzcut.io",
   "dependencies": {
     "@chakra-ui/react": "^1.8.1",
     "@emotion/react": "^11.7.1",

@@ -1,7 +1,5 @@
 import { Link } from "react-router-dom";
 import { Box, Flex, Text, Button, Image } from "@chakra-ui/react";
-// import logo from "./logo.png";
-
 
 const MenuItem = (props) => {
   const { children, isLast, to = "/", ...rest } = props;
@@ -43,19 +41,6 @@ const Header = (props) => {
         </Link>
       </Flex>
 
-      {/* <Box flexBasis={{ base: "100%", md: "auto" }}>
-        <Flex
-          align={["center", "center", "center", "center"]}
-          justify={["center", "space-between", "flex-end", "flex-end"]}
-          direction={["column", "row", "row", "row"]}
-          pt={[4, 4, 0, 0]}
-        >
-          <MenuItem to="/">Home</MenuItem>
-          <MenuItem to="/how">How It Works</MenuItem>
-          <MenuItem to="/features">Features</MenuItem>
-          <MenuItem to="/pricing">Pricing</MenuItem>
-        </Flex>
-      </Box> */}
     </Flex>
   );
 };

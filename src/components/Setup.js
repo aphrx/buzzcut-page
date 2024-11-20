@@ -4,7 +4,7 @@ const SetupBox = ({ title, image, description }) => (
   <Box
     pt={6}
     bg="#2c254b"
-    borderRadius="md"
+    borderRadius="3xl"
     shadow="md"
     textAlign="center"
     _hover={{
@@ -24,14 +24,14 @@ const SetupBox = ({ title, image, description }) => (
       {title}
     </Heading>
     <Flex justify="center">
-      <Image src={image} height={300} alt="Setup Image" />  {/* Adjust image size */}
+      <Image src={image} height={330} alt="Setup Image" />  {/* Adjust image size */}
     </Flex>  </Box>
 );
 
 export default function Setups({ setups }) {
   if (!setups || !setups.length) {
     return (
-      <VStack w="100%" spacing={8}>
+      <VStack w="100%" spacing={8} p={8}>
         <Heading fontSize="2xl" fontWeight="bold" color="white" p={4}>
           How to Setup
         </Heading>
@@ -41,10 +41,13 @@ export default function Setups({ setups }) {
   }
 
   return (
-    <VStack w="100%" spacing={8}>
-      <Heading fontSize="2xl" fontWeight="bold" color="white" p={4}>
-        How to Setup
-      </Heading>
+    <Box w="100%" mt={8} mb={8}>
+    <VStack w="100%" spacing={8} p={8}>
+        {/* Section Heading */}
+        <Heading fontSize="3xl" fontWeight="bold" color="white" p={4}>
+          How to Setup
+        </Heading>
+
       <Flex
         direction={{ base: 'column', lg: 'row' }}
         justify="space-between"
@@ -71,5 +74,6 @@ export default function Setups({ setups }) {
         </Grid>
       </Flex>
     </VStack>
+    </Box>
   );
 }

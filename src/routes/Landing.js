@@ -4,6 +4,7 @@ import Footer from "../components/Footer"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
 import Setups from "../components/Setup"
+import FAQ from "../components/FAQ"
 
 const featuresData = [
   {
@@ -24,7 +25,7 @@ const featuresData = [
   {
     title: 'Automate',
     image: 'robot.png',
-    description: 'Set a wide range of automations so that you don\'t have to hover over your phone to let your Uber Eats delivery in.',
+    description: 'Set a range of automations so that you don\'t have to hover over your phone to let your food delivery in.',
   },
 ];
 
@@ -43,6 +44,15 @@ const setupData = [
   },
 ];
 
+const faqs = [
+  { question: 'Is my buzzer compatiable?', answer: 'Buzzcut currently works with buzzer systems that dial to a phone number.' },
+  { question: 'What happens to Buzzcut if I move?', answer: 'The account would be configured to the phone number. As long as you are moving to another Buzzcut-compatiable building, you can simply deactivate your number from the old buzzer and add it to the new buzzer, and you should be able to operate it with Buzzcut once again!' },
+  { question: 'What is a Buzzcut number?', answer: 'A Buzzcut number is a generated VOIP number that Buzzcut generates. Buzzcut is then able to control how this phone number acts based on rules that are set in the app.' },
+  { question: 'Does Buzzcut work if I share a unit with someone else?', answer: 'Yes! The subscription plan is for the group, not per user. So once a Buzzcut number is generated for the group, you can invite users to join the Buzzcut group and access the same triggers that you have access to.' },
+];
+
+
+
 
 
 export default function Landing(props) {
@@ -54,19 +64,19 @@ export default function Landing(props) {
       m="0 auto"
       {...props}
       bg="#140d37" 
-      
     >
       <Header />
       <Hero
+        id="hero"
         title="Bring Your Buzzer Into The 21st Century"
         subtitle="Modernize Your Buzzer"
-        image="https://i.imgur.com/WwU5FPX.png"
         ctaText="Create your account now"
         ctaLink="/signup"
       />
-      <Features features={featuresData}/>
-      <Setups setups={setupData}/>
+      <Features id="features" features={featuresData} image="https://i.imgur.com/WwU5FPX.png"/> {/* Add ID here */}
+      <Setups id="setup" setups={setupData}/> {/* Add ID here */}
+      <FAQ id="faqs" faqs={faqs} /> {/* Add ID here */}
       <Footer />
     </Flex>
-  )
+  );
 }
