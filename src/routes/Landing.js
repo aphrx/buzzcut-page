@@ -3,6 +3,7 @@ import Header from "../components/Header"
 import Footer from "../components/Footer"
 import Hero from "../components/Hero"
 import Features from "../components/Features"
+import Setups from "../components/Setup"
 
 const featuresData = [
   {
@@ -27,6 +28,22 @@ const featuresData = [
   },
 ];
 
+const setupData = [
+  {
+    title: 'Create Number',
+    image: '1.png',
+  },
+  {
+    title: 'Update Buzzer',
+    image: '2.png',
+  },
+  {
+    title: 'Use Buzzcut',
+    image: '3.png',
+  },
+];
+
+
 
 export default function Landing(props) {
   return (
@@ -48,6 +65,7 @@ export default function Landing(props) {
         ctaLink="/signup"
       />
       <Features features={featuresData}/>
+      <Setups setups={setupData}/>
       <Footer />
     </Flex>
   )
