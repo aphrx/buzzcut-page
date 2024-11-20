@@ -1,12 +1,12 @@
 {
   "files": {
-    "main.js": "/static/js/main.1823d837.js",
-    "static/js/422.502688d8.chunk.js": "/static/js/422.502688d8.chunk.js",
-    "index.html": "/index.html",
-    "main.1823d837.js.map": "/static/js/main.1823d837.js.map",
-    "422.502688d8.chunk.js.map": "/static/js/422.502688d8.chunk.js.map"
+    "main.js": "/buzzcut.io/static/js/main.42afb1e9.js",
+    "static/js/422.502688d8.chunk.js": "/buzzcut.io/static/js/422.502688d8.chunk.js",
+    "index.html": "/buzzcut.io/index.html",
+    "main.42afb1e9.js.map": "/buzzcut.io/static/js/main.42afb1e9.js.map",
+    "422.502688d8.chunk.js.map": "/buzzcut.io/static/js/422.502688d8.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/main.1823d837.js"
+    "static/js/main.42afb1e9.js"
   ]
 }
