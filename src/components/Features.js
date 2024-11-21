@@ -24,9 +24,9 @@ const FeatureBox = ({ title, image, description }) => (
   </Box>
 );
 
-export default function Features({ features, image }) {
+export default function Features({ id, features, image }) {
   return (
-    <Box bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} mb={8} mt={8}>
+    <Box id={id} bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} mb={8} mt={8}>
       <VStack w="100%" spacing={8} p={8}>
         {/* Section Heading */}
         <Heading fontSize="3xl" fontWeight="bold" color="white" p={4}>
@@ -67,7 +67,7 @@ export default function Features({ features, image }) {
             templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} // Single column on small screens, two columns on medium and larger screens
             gap={6}
             order={{base: 2, md: 1}}
-            flex="1"
+            // flex="1"
             maxW={{ base: '100%', lg: '70%' }}
             marginTop={{ base: '0px', md: '40px' }}
           >

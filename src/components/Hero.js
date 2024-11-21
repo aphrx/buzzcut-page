@@ -8,8 +8,9 @@ export default function Hero({
   ...rest
 }) {
   return (
+    <section id={id} style={{ height: "100vh" }}>
+
     <Flex
-      id={id}
       align="center"
       justify={{ base: 'center', md: 'space-between' }} // Make content space-between on larger screens
       direction={{ base: 'column', md: 'row' }} // Stack vertically on mobile, horizontally on desktop
@@ -111,5 +112,6 @@ export default function Hero({
       </Box>
       
     </Flex>
+    </section>
   );
 }

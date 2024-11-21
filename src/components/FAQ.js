@@ -59,9 +59,10 @@ const FAQBox = ({ question, answer }) => (
   </Box>
 );
 
-export default function FAQ({ faqs }) {
+export default function FAQ({ id, faqs }) {
   if (!faqs || !faqs.length) {
     return (
+        <section id={id} style={{ height: "100vh" }}>
       <Box bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} w="100%" mt={8} mb={8}>
         <VStack w="100%" spacing={8} p={8}>
           <Heading fontSize="2xl" fontWeight="bold" color="white" p={4}>
@@ -70,18 +71,20 @@ export default function FAQ({ faqs }) {
           <Text color="white">No FAQs available.</Text>
         </VStack>
       </Box>
+      </section>
     );
   }
 
   return (
-    <Box bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} w="100%" mt={8} mb={8}>
+    // <section id={id} style={{ height: "100vh" }}>
+    <Box id={id} bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} w="100%" mt={8} mb={8}>
       <VStack w="100%" spacing={8} p={8}>
-        <Heading fontSize="2xl" fontWeight="bold" color="white" p={4}>
+        <Heading fontSize="3xl" fontWeight="bold" color="white" p={4}>
           Frequently Asked Questions
         </Heading>
         <Flex
           direction="column"
-          justify="center"
+          justify="space-between"
           align="center"
           w="100%"
           gap={8}
@@ -89,8 +92,9 @@ export default function FAQ({ faqs }) {
           {/* Grid Layout for FAQ boxes */}
           <Grid
             templateColumns={{ base: '1fr', md: 'repeat(2, 1fr)' }} // 1 column on small screens, 2 on larger screens
-            gap={6} // Add margin between the boxes
+            gap={8} // Add margin between the boxes
             w="100%" // Ensure grid takes full width
+            marginTop={{ base: '0px', md: '40px' }}
           >
             {faqs.map((faq, index) => (
               <GridItem key={index}>
@@ -101,5 +105,6 @@ export default function FAQ({ faqs }) {
         </Flex>
       </VStack>
     </Box>
+    // </section>
   );
 }

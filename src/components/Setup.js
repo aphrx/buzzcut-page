@@ -28,7 +28,7 @@ const SetupBox = ({ title, image, description }) => (
     </Flex>  </Box>
 );
 
-export default function Setups({ setups }) {
+export default function Setups({ id, setups }) {
   if (!setups || !setups.length) {
     return (
       <VStack w="100%" spacing={8} p={8}>
@@ -41,7 +41,7 @@ export default function Setups({ setups }) {
   }
 
   return (
-    <Box w="100%" mt={8} mb={8}>
+    <Box id={id} w="100%" mt={8} mb={8}>
     <VStack w="100%" spacing={8} p={8}>
         {/* Section Heading */}
         <Heading fontSize="3xl" fontWeight="bold" color="white" p={4}>
