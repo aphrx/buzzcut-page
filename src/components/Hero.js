@@ -8,7 +8,7 @@ export default function Hero({
   ...rest
 }) {
   return (
-    <section id={id} style={{ height: "100vh" }}>
+    <section id={id} style={{ height: "80vh" }}>
 
     <Flex
       align="center"

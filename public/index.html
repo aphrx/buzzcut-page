@@ -2,19 +2,101 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="description"
-      content="Bring Your Buzzer Into The 21st Century"
-    />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    
+    <!-- Title and Meta Description for SEO -->
+    <title>Buzzcut - The Smart Buzzer for Apartments & Condos</title>
+    <meta name="description" content="Control your building’s access system from anywhere using your smartphone. Instantly integrate Buzzcut with your existing buzzer setup, no installation required. Experience a smarter, safer way to manage entryways for apartments and condos." />
+    
+    <!-- Open Graph (for social sharing) -->
+    <meta property="og:title" content="Buzzcut - The Smart Buzzer for Apartments & Condos" />
+    <meta property="og:description" content="Control your building’s access system from anywhere using your smartphone. Instantly integrate Buzzcut with your existing buzzer setup, no installation required." />
+    <meta property="og:image" content="%PUBLIC_URL%/logo.png" />
+    <meta property="og:url" content="https://www.buzzcut.io" />
+    <meta property="og:type" content="website" />
+    
+    <!-- Twitter Card Metadata -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Buzzcut - The Smart Buzzer for Apartments & Condos" />
+    <meta name="twitter:description" content="Control your building’s access system from anywhere using your smartphone. Instantly integrate Buzzcut with your existing buzzer setup, no installation required." />
+    <meta name="twitter:image" content="%PUBLIC_URL%/logo.png" />
+    
+    <!-- Preload key assets -->
+    <link rel="preload" href="%PUBLIC_URL%/manifest.json" as="fetch" />
+    
+    <!-- Link to favicon -->
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    
+    <!-- Apple Touch Icon -->
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo.png" />
+    
+    <!-- Web App Manifest -->
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <title>Buzzcut</title>
+    
+    <!-- Google Fonts (optional) -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+    
+    <!-- Schema.org JSON-LD Structured Data for SEO -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Product",
+        "name": "Buzzcut - Smart Buzzer for Apartments & Condos",
+        "description": "Buzzcut allows you to control your building’s access system remotely. It integrates instantly with your existing buzzer setup, no installation required. Perfect for apartments and condos.",
+        "brand": {
+          "@type": "Brand",
+          "name": "Buzzcut"
+        },
+        "url": "https://www.buzzcut.io",
+        "image": "%PUBLIC_URL%/logo.png",
+        "offers": {
+          "@type": "Offer",
+          "url": "https://www.buzzcut.io",
+          "priceCurrency": "CAD",  // Price in Canadian Dollars (CAD)
+          "price": "4.99",  // Monthly subscription price in CAD
+          "priceValidUntil": "2025-12-31",  // Optional: Expiration date for price
+          "itemCondition": "https://schema.org/NewCondition",
+          "availability": "https://schema.org/InStock",
+          "eligibleRegion": "https://schema.org/CA",  // Available in Canada
+          "priceSpecification": {
+            "@type": "PriceSpecification",
+            "priceCurrency": "CAD",  // Ensure currency is CAD
+            "price": "4.99",  // Monthly price
+            "billingFrequency": "P1M"  // "P1M" stands for monthly billing frequency
+          }
+        }
+      }      
+    </script>
+    
   </head>
+  
+  <!-- Google Analytics and Hotjar Tracking -->
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-S7H438DH71"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+        dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-S7H438DH71');
+    </script>
+
+    <!-- Hotjar Tracking Code -->
+    <script>
+      (function(h,o,t,j,a,r){
+          h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
+          h._hjSettings={hjid:5226506,hjsv:6};
+          a=o.getElementsByTagName('head')[0];
+          r=o.createElement('script');r.async=1;
+          r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
+          a.appendChild(r);
+      })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+    </script>
+    
     <div id="root"></div>
   </body>
 </html>

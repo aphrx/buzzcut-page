@@ -26,7 +26,8 @@ const FeatureBox = ({ title, image, description }) => (
 
 export default function Features({ id, features, image }) {
   return (
-    <Box id={id} bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} mb={8} mt={8}>
+    <Flex id={id} pt={5}>
+    <Box bg="#2c254b" borderRadius={{base: 0, md: "3xl"}} mb={8} mt={8}>
       <VStack w="100%" spacing={8} p={8}>
         {/* Section Heading */}
         <Heading fontSize="3xl" fontWeight="bold" color="white" p={4}>
@@ -84,5 +85,6 @@ export default function Features({ id, features, image }) {
         </Flex>
       </VStack>
     </Box>
+    </Flex>
   );
 }

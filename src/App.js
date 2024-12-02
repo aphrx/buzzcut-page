@@ -2,8 +2,13 @@ import {
   ChakraProvider, extendTheme
 } from '@chakra-ui/react';
 
-import { HashRouter, Routes, Route } from "react-router-dom"
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Landing from './routes/Landing';
+import BlogPage from './routes/BlogPage'; // Import BlogPage
+import BlogPost from './routes/BlogPost'; // Import BlogPost
+import PrivacyPage from './routes/PrivacyPage';
+import TermsPage from './routes/TermsPage';
+
 const theme = extendTheme({
   styles: {
     global: {
@@ -16,15 +21,18 @@ const theme = extendTheme({
   },
 });
 
-
 function App() {
   return (
     <ChakraProvider theme={theme}>
-      <HashRouter>
+      <BrowserRouter>
         <Routes>
           <Route path="/" element={<Landing />} />
+          <Route path="/blog" element={<BlogPage />} /> {/* Add route for BlogPage */}
+          <Route path="/blog/:slug" element={<BlogPost />} /> {/* Dynamic route for individual blog posts */}
+          <Route path="/privacy" element={<PrivacyPage />} />
+          <Route path="/terms" element={<TermsPage />} />
         </Routes>
-      </HashRouter>
+      </BrowserRouter>
     </ChakraProvider>
   );
 }

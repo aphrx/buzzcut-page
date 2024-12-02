@@ -50,7 +50,7 @@ const Header = (props) => {
         {/* Logo with the menu inline */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <Image
-            src="logo.png"
+            src="/logo.png"
             height={10}
             alt="Buzzcut Logo"
             mr={2}
@@ -86,10 +86,11 @@ const Header = (props) => {
           display={{ base: "none", md: "flex" }}
         >
           {/* Regular Menu Items */}
-          <MenuItem to="#hero">Home</MenuItem>
-          <MenuItem to="#features">Features</MenuItem>
-          <MenuItem to="#setup">Setup</MenuItem>
-          <MenuItem to="#faqs">FAQs</MenuItem>
+          <MenuItem to="/">Home</MenuItem>
+          <MenuItem to="/#features">Features</MenuItem>
+          <MenuItem to="/#setup">Setup</MenuItem>
+          <MenuItem to="/#faqs">FAQs</MenuItem>
+          <MenuItem to="/blog">Blog</MenuItem> 
         </Flex>
       </Flex>
 
@@ -103,18 +104,20 @@ const Header = (props) => {
             <DrawerBody>
               {/* Mobile Menu Items */}
               <VStack>
-                <MobileMenuItem to="#hero" isLast>
+                <MobileMenuItem to="/" isLast>
                   Home
                 </MobileMenuItem>
-                <MobileMenuItem to="#features" isLast>
+                <MobileMenuItem to="/#features" isLast>
                   Features
                 </MobileMenuItem>
-                <MobileMenuItem to="#setup" isLast>
+                <MobileMenuItem to="/#setup" isLast>
                   Setup
                 </MobileMenuItem>
-                <MobileMenuItem to="#faqs" isLast>
+                <MobileMenuItem to="/#faqs" isLast>
                   FAQs
                 </MobileMenuItem>
+                <MobileMenuItem to="/blog">Blog</MobileMenuItem>
+
               </VStack>
             </DrawerBody>
           </DrawerContent>
