@@ -17,6 +17,10 @@ const theme = extendTheme({
         color: "white", // Set the text color if needed
         margin: 0,
       },
+      html:{
+        scrollBehavior: "smooth"
+      }
+
     },
   },
 });

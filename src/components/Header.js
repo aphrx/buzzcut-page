@@ -2,6 +2,7 @@ import { HashLink as Link } from "react-router-hash-link"; // Import the HashLin
 import { Box, VStack, Button, Flex, Text, Image, IconButton, Drawer, DrawerBody, DrawerHeader, DrawerOverlay, DrawerContent, useDisclosure, DrawerCloseButton } from "@chakra-ui/react";
 import { faBars } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { useState } from "react";
 
 const MenuItem = (props) => {
   const { children, isLast, to, ...rest } = props;
@@ -12,7 +13,7 @@ const MenuItem = (props) => {
       display="block"
       {...rest}
     >
-      {/* Correctly pass `to` prop for HashLink */}
+      {/* Correctly pass to prop for HashLink */}
       <Link smooth to={to}>
         {children}
       </Link>
@@ -20,19 +21,24 @@ const MenuItem = (props) => {
   );
 };
 
-const MobileMenuItem = (props) => {
-  const { children, isLast, to, ...rest } = props;
-  return (
-      <Link smooth to={to} style={{ width: "100%" }}>
-        <Button w="100%" bg={"#140d37"} smooth to={to}>
-          {children}
-        </Button>
-      </Link>
-  );
-};
+const MobileMenuItem = ({ children, to, onClick }) => (
+  <Link smooth to={to}><Button
+    w="100%"
+    bg="#140d37"
+    onClick={onClick}
+  >
+    {children}
+  </Button></Link>
+);
 
 const Header = (props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
+  const [isMenuOpen, setIsMenuOpen] = useState(false); // Custom menu state
+
+  // Toggle the menu open/close
+  const toggleMenu = () => {
+    setIsMenuOpen((prev) => !prev);
+  };
 
   return (
     <Flex
@@ -50,7 +56,7 @@ const Header = (props) => {
         {/* Logo with the menu inline */}
         <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
           <Image
-            src="/logo.png"
+            src="/logo.webp"
             height={10}
             alt="Buzzcut Logo"
             mr={2}
@@ -63,7 +69,7 @@ const Header = (props) => {
           aria-label="Open menu"
           icon={<FontAwesomeIcon icon={faBars} />}
           display={{ base: "block", md: "none" }}
-          onClick={onOpen}
+          onClick={toggleMenu}
           _hover={{
             bg: '#2c254b', // Hover state color
             color: 'white',
@@ -90,38 +96,58 @@ const Header = (props) => {
           <MenuItem to="/#features">Features</MenuItem>
           <MenuItem to="/#setup">Setup</MenuItem>
           <MenuItem to="/#faqs">FAQs</MenuItem>
+          <MenuItem to="/#pricing">Pricing</MenuItem>
           <MenuItem to="/blog">Blog</MenuItem> 
         </Flex>
       </Flex>
 
-      <Box flexBasis={{ base: "100%", md: "auto" }}>
-        {/* Drawer for Mobile Menu */}
-        <Drawer isOpen={isOpen} onClose={onClose} placement="right">
-          <DrawerOverlay />
-          <DrawerContent bg="#2c254b">
-            <DrawerCloseButton />
-            <DrawerHeader color="white">Menu</DrawerHeader>
-            <DrawerBody>
-              {/* Mobile Menu Items */}
-              <VStack>
-                <MobileMenuItem to="/" isLast>
-                  Home
-                </MobileMenuItem>
-                <MobileMenuItem to="/#features" isLast>
-                  Features
-                </MobileMenuItem>
-                <MobileMenuItem to="/#setup" isLast>
-                  Setup
-                </MobileMenuItem>
-                <MobileMenuItem to="/#faqs" isLast>
-                  FAQs
-                </MobileMenuItem>
-                <MobileMenuItem to="/blog">Blog</MobileMenuItem>
-
-              </VStack>
-            </DrawerBody>
-          </DrawerContent>
-        </Drawer>
+       {/* Custom Drawer (Mobile) */}
+       <Box
+        position="fixed"
+        top={0}
+        right={0}
+        bottom={0}
+        left={0}
+        bg="rgba(0, 0, 0, 0.5)" // Semi-transparent overlay
+        display={isMenuOpen ? "block" : "none"} // Only show overlay when menu is open
+        onClick={toggleMenu} // Close menu when clicking overlay
+      />
+      
+      {/* Menu Drawer */}
+      <Box
+        position="fixed"
+        top={0}
+        left={0}
+        bottom={0}
+        width="250px"
+        bg="#2c254b"
+        transform={isMenuOpen ? "translateX(0)" : "translateX(-100%)"}
+        transition="transform 0.3s ease"
+        zIndex="1000" // Ensure it sits above other content
+        p={4}
+      >
+        {/* Drawer Content */}
+        
+        <VStack align="stretch" mt={6}>
+          <MobileMenuItem to="/" onClick={toggleMenu}>
+            Home
+          </MobileMenuItem>
+          <MobileMenuItem to="/#features" onClick={toggleMenu}>
+            Features
+          </MobileMenuItem>
+          <MobileMenuItem to="/#setup" onClick={toggleMenu}>
+            Setup
+          </MobileMenuItem>
+          <MobileMenuItem to="/#faqs" onClick={toggleMenu}>
+            FAQs
+          </MobileMenuItem>
+          <MobileMenuItem to="/#pricing" onClick={toggleMenu}>
+            Pricing
+          </MobileMenuItem>
+          <MobileMenuItem to="/blog" onClick={toggleMenu}>
+            Blog
+          </MobileMenuItem>
+        </VStack>
       </Box>
     </Flex>
   );
