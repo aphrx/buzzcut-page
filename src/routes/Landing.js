@@ -75,7 +75,7 @@ export default function Landing(props) {
       <Features id="features" features={featuresData} image="https://i.imgur.com/WwU5FPX.png"/> {/* Add ID here */}
       <Setups id="setup" setups={setupData}/> {/* Add ID here */}
       <FAQ id="faqs" faqs={faqs} /> {/* Add ID here */}
-      <Pricing id="pricing"/>
+      {/* <Pricing id="pricing"/> */}
       <Footer />
     </Flex>
   );

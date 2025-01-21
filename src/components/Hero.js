@@ -28,7 +28,8 @@ export default function Hero({ id, title, subtitle, image, ...rest }) {
         {/* Text Section */}
         <Stack
           spacing={4}
-          w={{ base: '80%', md: '50%' }}
+          w={{ base: '100%', md: '50%' }}
+          mb={{base: '40px'}}
           align={{ base: 'center', md: 'flex-start' }}
           textAlign={{ base: 'center', md: 'left' }}
         >

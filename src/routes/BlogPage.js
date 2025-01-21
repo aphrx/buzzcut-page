@@ -6,6 +6,12 @@ import Footer from "../components/Footer";
 const BlogPage = () => {
   const blogPosts = [
     {
+      title: "How Buzzcut Transforms Access Control for Airbnbs",
+      description: "Discover how Buzzcut’s smart access control system can streamline and simplify property management for Airbnbs hosts.",
+      date: "Jan 21, 2025",
+      link: "/blog/how-buzzcut-transforms-access-control-for-airbnb-hosts"
+    },
+    {
       title: "How to Modernize Your Buzzer System",
       description: "Learn how to upgrade your building's buzzer system with modern technology like a smart buzzer.",
       date: "December 1, 2024",

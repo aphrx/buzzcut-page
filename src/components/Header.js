@@ -96,7 +96,7 @@ const Header = (props) => {
           <MenuItem to="/#features">Features</MenuItem>
           <MenuItem to="/#setup">Setup</MenuItem>
           <MenuItem to="/#faqs">FAQs</MenuItem>
-          <MenuItem to="/#pricing">Pricing</MenuItem>
+          {/* <MenuItem to="/#pricing">Pricing</MenuItem> */}
           <MenuItem to="/blog">Blog</MenuItem> 
         </Flex>
       </Flex>
@@ -141,9 +141,9 @@ const Header = (props) => {
           <MobileMenuItem to="/#faqs" onClick={toggleMenu}>
             FAQs
           </MobileMenuItem>
-          <MobileMenuItem to="/#pricing" onClick={toggleMenu}>
+          {/* <MobileMenuItem to="/#pricing" onClick={toggleMenu}>
             Pricing
-          </MobileMenuItem>
+          </MobileMenuItem> */}
           <MobileMenuItem to="/blog" onClick={toggleMenu}>
             Blog
           </MobileMenuItem>
